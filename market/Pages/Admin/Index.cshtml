@@ -1,0 +1,42 @@
+﻿@page
+@model market.Pages.Admin.IndexModel
+@{
+    ViewData["title"] = "admin";
+}
+<h1> لیست کالا ها</h1>
+<div>
+    <a class="btn btn-primary" asp-page="Add">افزودن کالا</a>
+</div>
+
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>تصویر</th>
+            <th>نام</th>
+            <th>قیمت</th>
+            <th>دستورات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>
+                    <img src="/img/@(item.Id).jpg" />
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Item.price
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="delete" asp-route-id="@item.Id"> حذف</a>
+                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.Id"> ویرایش</a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

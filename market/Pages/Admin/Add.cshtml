@@ -1,0 +1,30 @@
+﻿@page
+@model market.Pages.Admin.AddModel
+@{
+}
+<h1> افزودن کالا</h1>
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        <label asp-for="Product.Name" class="form-label"></label>
+        <input asp-for="Product.Name" class="form-control" />
+        <span asp-validation-for="Product.Name"></span>
+        <br />
+        <label asp-for="Product.Description" class="form-label"></label>
+        <textarea asp-for="Product.Description" class="form-control"></textarea>
+        <span asp-validation-for="Product.Description"></span>
+        <br />
+        <label asp-for="Product.Price" class="form-label"></label>
+        <input asp-for="Product.Price" class="form-control" />
+        <span asp-validation-for="Product.Price"></span>
+        <br />
+        <label asp-for="Product.QuantityInStock" class="form-label"></label>
+        <input asp-for="Product.QuantityInStock" class="form-control" />
+        <span asp-validation-for="Product.QuantityInStock"></span>
+        <br />
+        <label asp-for="Product.Picture" class="form-label"></label>
+        <input asp-for="Product.Picture" class="form-control" />
+        <span asp-validation-for="Product.Picture"></span>
+        <br />
+        <input type="submit" value="ثبت" class="btn btn-primary rounded-0" />
+    </form>
+</div>

@@ -1,0 +1,17 @@
+﻿@model Product
+
+
+<div class="col-12 col-sm-6 col-md-4 mb-2 ">
+    <div class="card h-100 ">
+        <img class="card-img-top box-shadow" src="/img/@(Model.Id).jpg" />
+
+        <div class="card-body">
+            <div class="card-title">@Model.Name</div>
+            <div class="card-text">@Model.Description</div>
+
+        </div>
+        <div class="card-footer bg-body border-0 ">
+            <a class="btModel btModel-primary" asp-action="Detail" asp-controller="Home" asp-route-id="@Model.Id">جزئیات محصول</a>
+        </div>
+    </div>
+</div>
